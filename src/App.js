@@ -14,7 +14,7 @@ function App() {
     let index = indexRef.current;
 
     // Fetch new data when scroll to the end
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight-10) {
       fetch('/get_scenic_info?start='+index+"&end="+(index+10))
         .then(res => res.json())
         .then((info) => {
